@@ -1,5 +1,6 @@
 // @flow
 import axios from 'axios';
+import Raven from 'raven-js';
 import paletteAdapter from '../adapters/paletteAdapter';
 import type { ColorType } from '../constants/FlowTypes';
 
@@ -28,7 +29,11 @@ const PaletteAPI = {
     return axios
       .get(RANDOM_ENDPOINT)
       .then(({ data }: { data: Array<string>}) => data)
-      .then(paletteAdapter);
+      .then(paletteAdapter)
+      .catch(err => {
+        debugger
+        return Raven.captureException(err)
+      })
   },
 };
 
