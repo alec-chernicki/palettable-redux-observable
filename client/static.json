@@ -1,7 +1,8 @@
 {
   "root": "build/",
+  "clean_urls": true,
   "proxies": {
-    "/api": {
+    "/api/": {
       "origin": "${API_URL}/api"
     }
   }
