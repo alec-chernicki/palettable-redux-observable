@@ -2,11 +2,7 @@
   "name": "palettable-client",
   "version": "0.1.0",
   "private": true,
-  "proxy": {
-    "/api": {
-      "target": "http://localhost:3001"
-    }
-  },
+  "proxy": "http://localhost:3001/",
   "dependencies": {
     "autoprefixer": "7.1.1",
     "axios": "^0.11.0",
